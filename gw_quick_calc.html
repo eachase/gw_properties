@@ -339,14 +339,14 @@ $$t_{merg} = 2.18 \left(\frac{1.21}{\mathcal{M}_{c}}\right)^{5/3} \left(\frac{10
 
 
 <br></br>
-<!-- Time in band -->
-<a name="timeBand"></a>
-<form id="timeBand" action="">
+<!-- Number of Cycles in Band -->
+<a name="cycleBand"></a>
+<form id="cycleBand" action="">
 <fieldset>
-	<legend>Time in Band</legend>
+	<legend>Number of Cycles in Band</legend>
 	
 
-$$t_{merg} = 2.18 \left(\frac{1.21}{\mathcal{M}_{c}}\right)^{5/3} \left(\frac{100}{f_{\textrm{low}}}\right)^{8/3}$$
+$$N_{cyc} = 5 * 10^{3} \left(\frac{20 Hz}{\mathcal{f}_{min}}\right)^{5/3}
 	
 	<p>
 		<label for="Mc">$\mathcal{M}_{c}\ (M_{\odot}$)</label>
@@ -362,7 +362,7 @@ $$t_{merg} = 2.18 \left(\frac{1.21}{\mathcal{M}_{c}}\right)^{5/3} \left(\frac{10
 		<input type="reset" value="Reset" />
 	</p>
 	<p>
-		<label for="t_band">Time in Band (s)</label>
+		<label for="t_band">Number of Cycles in Band</label>
 		<input id="t_band" name="t_band" type="float" />
 	</p>
 </fieldset>
