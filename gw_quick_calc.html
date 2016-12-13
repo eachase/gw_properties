@@ -378,8 +378,8 @@ $$N_{cyc} = 5 \cdot 10^{3} \left(\frac{20 Hz}{\mathcal{f}_{low}}\right)^{5/3} \l
 		return n_cyc.toFixed(2)
 	}
 
-	var numCyc = document.getElementById("numCyc");
-	if (numCyc) {
+	var cycleBand = document.getElementById("cycleBand");
+	if (cycleBand) {
 		numCyc.onsubmit = function () {
 			this.n_cyc.value = calculateNumCyc(this.Mc.value, this.f_low.value);
 			return false;
