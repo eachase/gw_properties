@@ -345,8 +345,6 @@ $$t_{merg} = 2.18 \left(\frac{1.21}{\mathcal{M}_{c}}\right)^{5/3} \left(\frac{10
 <fieldset>
 	<legend>Number of Cycles in Band</legend>
 	
-$$t_{merg} = 2.18 \left(\frac{1.21}{\mathcal{M}_{c}}\right)^{5/3} \left(\frac{100}{f_{\textrm{low}}}\right)^{8/3}$$
-	
 $$N_{cyc} = 5 \cdot 10^{3} \left(\frac{20 Hz}{\mathcal{f}_{low}}\right)^{5/3} \left(\frac{1.2 \mathcal{M}_{c}}{M_{\odot}}\right)^{5/3}$$
 	
 	<p>
@@ -354,20 +352,40 @@ $$N_{cyc} = 5 \cdot 10^{3} \left(\frac{20 Hz}{\mathcal{f}_{low}}\right)^{5/3} \l
 		<input id="Mc" name="Mc" type="float" />
 	</p>
 	<p>
-		<label for="f_low">f_low (Hz)</label>
+		<label for="f_low">$f_low$ (Hz)</label>
 		<input id="f_low" name="f_low" type="float" />
 	</p>
 	<p>
-		<input type="submit" value="Calculate time to merger from a given starting frequency" />
+		<input type="submit" value="Calculate number of cycles in band, given a starting frequency" />
 		or
 		<input type="reset" value="Reset" />
 	</p>
 	<p>
-		<label for="t_band">Number of Cycles in Band</label>
-		<input id="t_band" name="t_band" type="float" />
+		<label for="n_cyc">Number of Cycles in Band</label>
+		<input id="n_cyc" name="n_cyc" type="float" />
 	</p>
 </fieldset>
 </form>
+
+
+<script>
+(function () {
+	function calculateNumCyc(Mc, f_low) {
+		Mc = parseFloat(Mc);
+        	f_low = parseFloat(f_low);
+		t_band = 5* Math.pow(10, 3) * Math.pow((1.2 * Mc / 2.0e30), (5/3)) * Math.pow((20 / f_low), (5/3));
+		return t_band.toFixed(2)
+	}
+
+	var numCyc = document.getElementById("numCyc");
+	if (numCyc) {
+		numCyc.onsubmit = function () {
+			this.n_cyc.value = calculateNumCyc(this.Mc.value, this.f_low.value);
+			return false;
+		};
+	}
+}());
+</script>
 
 
 
