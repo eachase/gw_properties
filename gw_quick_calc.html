@@ -26,6 +26,7 @@ MathJax.Hub.Config({
 <div></div><a href="#lumDistance">Luminosity Distance</a>
 <div></div><a href="#spins">Aligned and In-Plane Spins</a>
 <div></div><a href="#timeBand">Time to merger</a>
+<div></div><a href="#cycleBand">Number of Cycles in Band</a>
 <div></div><a href="#orbitalSep">Orbital Separation</a>
 <div></div><a href="#schwarzRad">Schwarzschild Radius</a>
 
@@ -373,8 +374,8 @@ $$N_{cyc} = 5 \cdot 10^{3} \left(\frac{20 Hz}{\mathcal{f}_{low}}\right)^{5/3} \l
 	function calculateNumCyc(Mc, f_low) {
 		Mc = parseFloat(Mc);
         	f_low = parseFloat(f_low);
-		t_band = 5 * Math.pow(10, 3) * Math.pow((1.2 * Mc), (5/3)) * Math.pow((20 / f_low), (5/3));
-		return t_band.toFixed(2)
+		n_cyc = 5 * Math.pow(10, 3) * Math.pow((1.2 * Mc), (5/3)) * Math.pow((20 / f_low), (5/3));
+		return n_cyc.toFixed(2)
 	}
 
 	var numCyc = document.getElementById("numCyc");
